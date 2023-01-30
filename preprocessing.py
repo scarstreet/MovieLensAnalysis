@@ -47,11 +47,8 @@ def specifyByUserData(users,ratings,categ):
     # TODO - improve age by having an agespan
     user_header = ["user_id"].concat(categ)
     _user = users.loc[:,user_header]
-    print(_user)
     df = pd.merge(_user,ratings, on=['user_id'])
-    print(df)
+    return df
 
-ratings = readRatingData()
-users = readUserData()
-specifyByUserData(users, ratings, ["gender"])
+
 
